@@ -69,12 +69,39 @@ class linked_list():
                 break
             current = current.next
             count = count + 1
-
+    def inser_after_value(self,value,data):
+        new_node = Node(data)
+        current = self.head
+        flag = 0
+        while current:
+            if current.data == value:
+                flag = 1
+                new_node.next = current.next
+                current.next = new_node
+                break
+            current = current.next
+        if flag == 0:
+            print("This value is not avalable in the linked list")
+    def remove_by_value(self,value):
+        current = self.head
+        prev = None
+        if current.data == value:
+            self.head = current.next
+            return
+        while current:
+            if current.data == value:
+                prev.next = current.next
+                break
+            prev = current
+            current = current.next
+        if current is None:
+            print("value not find ")
+            
+        
 
 ll = linked_list()
-ll.insert_value([1,2,3,4,5,6])
+ll.insert_value([1,2,3,4,5,6]) 
+ll.inser_after_value(9,4)
 ll.get_length()
-ll.insert_at(3,"new node")
-ll.insert_at(3,"new node")
+ll.remove_by_value(2)
 ll.display()
-ll.get_length() 
