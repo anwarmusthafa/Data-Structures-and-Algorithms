@@ -76,6 +76,7 @@ class linked_list():
         while current:
             if current.data == value:
                 flag = 1
+                    
                 new_node.next = current.next
                 current.next = new_node
                 break
