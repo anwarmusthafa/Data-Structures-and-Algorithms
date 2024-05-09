@@ -20,7 +20,7 @@ class Linkedlist():
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        print(slow.data)
+        print("\n Middle is ",slow.data)
     def display(self):
         current = self.head
         while current:
@@ -30,10 +30,11 @@ ll = Linkedlist()
 ll.append(5)
 ll.append(6)
 ll.append(4)
-ll.append(5)
+ll.append(10)
 ll.append(3)
 ll.append(1)
 ll.append(7)
-ll.middle()
 ll.display()
+ll.middle()
+
              
